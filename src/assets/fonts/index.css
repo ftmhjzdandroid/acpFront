@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url(./IRANYekanXFaNum-DemiBold.woff2) format("woff2"), url(./IRANYekanXFaNum-DemiBold.woff) format("woff"), url(./IRANYekanXFaNum-DemiBold.ttf) format("truetype");
+}
+
+
+/* @font-face {
+  font-family: "vazir";
+  src: url(./Vazir-FD-WOL.woff2) format("woff2"),
+    url(./Vazir-FD-WOL.woff) format("woff"),
+    url(./Vazir-FD-WOL.ttf) format("truetype");
+} */
+
+body {
+  font-family: "IranYekan";
+}
