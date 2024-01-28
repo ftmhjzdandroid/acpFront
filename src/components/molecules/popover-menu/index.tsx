@@ -1,3 +1,4 @@
+import { ArrowLeft } from "iconsax-react";
 import { Box, Typography } from "../../atoms";
 import { PopoverListModel } from "./model";
 
@@ -15,9 +16,9 @@ const PopoverMenu = ({
   return (
     <Box
       className={`flex flex-col border border-gray-200 ${position}-0 ${useInNavbar
-        ? "min-w-[256px] top-[64px] bg-[#ffffff]"
+        ? "min-w-[256px] top-[20px] bg-[#ffffff]"
         : "min-w-[180px] top-6 bg-white"
-        } shadow rounded-lg rounded-t-none absolute z-30`}
+        } shadow rounded-lg  absolute z-30`}
     >
       {dataRenders.map((data, index) => (
         <Box
@@ -36,7 +37,7 @@ const PopoverMenu = ({
               {data.title}
             </Typography>
           </Box>
-          {data.child}
+          <ArrowLeft/>
         </Box>
       ))}
     </Box>

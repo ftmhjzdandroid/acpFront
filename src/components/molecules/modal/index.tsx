@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import{ Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 type IProps = {
@@ -44,7 +44,7 @@ export const Modal = (props: IProps) => {
               <Dialog.Panel
                 as="div"
                 // overflow-hidden
-                className={`${size ?? "md:max-w-md"} p-5 w-full transform rounded-2xl bg-[#ffffff] ${padding ?? "md:p-6"
+                className={` p-5 transform rounded-2xl bg-[#ffffff] ${padding ?? "md:p-6"
                   } text-right align-middle shadow-xl transition-all`}
               >
                 {children}

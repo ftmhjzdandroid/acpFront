@@ -9,17 +9,21 @@ import { Container } from "./components/atoms";
 import { useInitializeApiMutation } from "./services/initialize";
 import { UserProvider } from "./providers/user-data";
 import { ConfirmDialogProvider } from "./providers/confirm-dialog";
-import { Navbar } from "./components/organisms/navbar";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+// import { Navbar } from "./components/organisms/navbar";
+import { Outlet, Route, Routes } from "react-router-dom";
 import WithNetworkStatus from "./providers/network-check/with-network-status";
 import { ShareManagmentProvider } from "./providers/share";
-import { renderThemeIcon } from "./components/atoms/background-icon/background-icon";
+import Navbar from "./components/organisms/navbar/Navbar";
+import Sidebar from "./components/organisms/Sidebar/Sidebar";
+import { paths } from "./data/app-routes";
+import { AssignmenLaw } from "./pages/services/assignment-law";
+import { MainRoutes } from "./routes";
+import { ConfigProvider } from "antd";
 
 function App() {
   // const [authValidate, { data, isLoading }] = useAuthValidateMutation();
 
   // const location = useLocation();
-
 
   // const [initialize, { data: initData, isLoading: initIsLoading }] =
   //   useInitializeApiMutation();
@@ -79,56 +83,51 @@ function App() {
   return (
     <>
       <WithNetworkStatus>
-        <Suspense fallback={<SuspenseLoading />}>
-          <UserProvider
-            // data={[]}
-            accessNodes={[]}
-          >
-            {/* <div className={`flex w-full min-h-screen relative items-center justify-center`}> */}
-              {/* {location.pathname !== "/notice/create-new-notice" && renderThemeIcon()} */}
+        <ConfigProvider
+          theme={{
+            components: {
+              Menu: {
+                itemSelectedColor: "#3949AB",
+                itemSelectedBg: "#EBECF6",
+                itemColor: "#696C70",
+                borderRadius:10
+              },
+            },
+          }}
+        >
+          <Suspense fallback={<SuspenseLoading />}>
+            <UserProvider
+              // data={[]}
+              accessNodes={[]}
+            >
               <div
-                className="w-full grow min-h-screen z-10"
+                className={`flex w-full min-h-screen relative items-center justify-center`}
               >
-                <ConfirmDialogProvider>
-                  {/* <Permission access="HAXPanel"> */}
+                <div className="w-full grow min-h-screen z-10 bg-[#fbfcff]">
+                  <ConfirmDialogProvider>
+                    {/* <Permission access="HAXPanel"> */}
                     <ShareManagmentProvider>
-                    
-                      {/* <Permission access="HAXPanel" panelName={initData?.info?.name}> */}
-                        {/* <Routes>
-                          <Route
-                            path="/"
-                            element={
-                              <Permission access="Notifications">
-                                <Navigate replace to="/notice" />
-                              </Permission>
-                            }
-                          />
-                          <Route
-                            path="/notice/*"
-                            element={
-                              <Permission access="Notifications">
-                                <NotificationRoutes />
-                              </Permission>
-                            }
-                          />
-                          <Route
-                            path="/cummon-questions/*"
-                            element={
-                              <Permission access="FoldreFaqs">
-                                <CummonQuestions />
-                              </Permission>
-                            }
-                          />
-                        </Routes> */}
-                      {/* </Permission> */}
+                      <div className=" flex justify-start flex-row-reverse ">
+                        <div className="flex flex-col w-full h-full ">
+                          <Navbar />
+                          <div className="m-5  min-h-[82vh] bg-background-50 rounded-2xl p-6 shadow-lg relative">
+                            <Routes>
+                              <Route path="/*" element={<MainRoutes />} />
+                            </Routes>
+                            <Outlet />
+                          </div>
+                        </div>
+                        <Sidebar />
+                      </div>
                       <ToastContainer />
                     </ShareManagmentProvider>
-                  {/* </Permission> */}
-                </ConfirmDialogProvider>
+                    {/* </Permission> */}
+                  </ConfirmDialogProvider>
+                </div>
               </div>
-            {/* </div> */}
-          </UserProvider>
-        </Suspense>
+            </UserProvider>
+          </Suspense>
+        </ConfigProvider>
       </WithNetworkStatus>
     </>
   );

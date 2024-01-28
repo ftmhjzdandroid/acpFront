@@ -2,25 +2,38 @@ import { useNavigate } from "react-router-dom";
 
 export type RoutesType =
   | "/"
-  | "/notice"
-  | "/education"
-  | "/conversation"
-  | "/cummon-questions"
-  | "/notice/detail"
-  | "/notice/create-new-notice";
+  | "/classification"
+  | "/agreedtraiff"
+  | "/feature"
+  | "/medicine"
+  | "/packing"
+  | "/proposal"
+  | "/setting"
+  | "/rules"
+  | "/services"
+  | "/type"
+  | "/sine"
+  | "/assignLaw"
+  | "/services/assignLaw"
+  | "/services/history"
+  |"/services/pricemanagement";
 
 export const useCustomNav = () => {
   const navigation = useNavigate();
 
   const to = (route: RoutesType) => navigation(route);
-  const toNoticeDetail = (data: { itemId: string }) => {
-    const { itemId } = data;
-    navigation("/notice/detail/" + itemId);
+
+  const toAssignLaw = (id?: string) => {
+    navigation("/services/assignLaw", {
+      state: {
+        id: id,
+      },
+    });
   };
   const toParam = (route: RoutesType, param?: string | object) =>
     navigation(route + "/" + param);
   const toHome = () => navigation("/");
   const back = () => navigation(-1);
 
-  return { to, toParam, toHome, back, toNoticeDetail };
+  return { to, toParam, toHome, back, toAssignLaw };
 };
