@@ -1,5 +1,5 @@
 import React from 'react'
-import PagesCard from './services/components/PagesCard'
+import PagesCard from './components/PagesCard'
 
 export default function Setting() {
   return (

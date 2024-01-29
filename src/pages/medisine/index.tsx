@@ -1,19 +1,18 @@
-import { Add } from "iconsax-react";
+import { Add, CloseCircle, TickCircle } from "iconsax-react";
 import { Typography } from "../../components/atoms";
-import ShowServisList from "./components/ShowServisList";
-import MineNavbar from "../../components/organisms/navbar/MineNavbar";
 import { Button } from "../../components/molecules";
+import MineNavbar from "./components/MineNavbar";
+import ShowMedisineList from "./components/ShowMedisineList";
 
-export default function Services() {
+export default function Medisine() {
   const list = [
     {
       name: "مهدیس صبوری",
       code: 1,
       jencod: 1,
       namad: "خدمات",
-      pris: 0,
+      pris: 300,
       activ: true,
-      bime: true,
     },
     {
       name: "محمد افضلی",
@@ -22,7 +21,6 @@ export default function Services() {
       namad: "خدمات",
       pris: 200,
       activ: true,
-      bime: true,
     },
     {
       name: "مهرنوش ستوده",
@@ -31,7 +29,6 @@ export default function Services() {
       namad: "پاپ اسمیر",
       pris: 50,
       activ: true,
-      bime: false,
     },
     {
       name: "سپیده شریفی",
@@ -40,16 +37,23 @@ export default function Services() {
       namad: "برای بای pass",
       pris: 54,
       activ: false,
-      bime: false,
+    },
+    {
+      name: "سپیده شریفی",
+      code: 4,
+      jencod: 4,
+      namad: "برای بای pass",
+      pris: 54,
+      activ: false,
     },
   ];
   return (
     <div className="">
       <div className="flex justify-between items-center  mb-5">
         <div>
-          <Typography type="h2">مدیریت خدمات</Typography>
+          <Typography type="h2">مدیریت دارو و خدمات</Typography>
           <Typography type="p" className="text-[#717376] mt-3">
-            در این قسمت میتوان توضیحاتی در مورد مدیریت خدمات نوشت.
+            در این قسمت میتوان توضیحاتی در موردمدریت دارو و خدمات نوشت.
           </Typography>
         </div>
         <Button size="small" leftIcon={<Add size="26" className="text-neutral-800" />} className="bg-[#F9C310] rounded-lg py-2 pl-2">
@@ -58,19 +62,19 @@ export default function Services() {
       </div>
       <hr />
       <MineNavbar />
-      <div className="bg-[#F4F5FA] mt-5 text-center grid grid-cols-7  p-4 text-[#3949AB] text-sm  gap-2 rounded-md">
-        <Typography type="h4">نام خدمت</Typography>
-        <Typography type="h4">کد خدمت</Typography>
+      <div className="bg-[#F4F5FA] mt-5 text-center grid grid-cols-6  p-4 text-[#3949AB] text-sm  gap-2 rounded-md">
+        <Typography type="h4">نام دارو ولوازم مصرفی</Typography>
+        <Typography type="h4">IRC</Typography>
         <Typography type="h4">کد ژنریک</Typography>
-        <Typography type="h4">نماد</Typography>
-        <Typography type="h4">قیمت پایه</Typography>
-        <Typography type="h4">فعال</Typography>
+        <Typography type="h4">قیمت در تعهد</Typography>
+        <Typography type="h4">قیمت IFDA</Typography>
         <Typography type="h4">پوشش بیمه</Typography>
       </div>
 
       {list.map((item, index) => (
-        <ShowServisList item={item} index={index} gridcolse="grid grid-cols-7"/>
+        <ShowMedisineList item={item} index={index} key={index}/>
       ))}
+         
     </div>
   );
 }

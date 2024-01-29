@@ -74,7 +74,7 @@ export default function Sidebar() {
     {
       text: "دارو و تجهیزات",
       elem: <ChemicalGlass color="#E8E8E9" variant="Bold" />,
-      topage: "/medicine",
+      topage: "/medisine",
       isopen: { isopen },
     },
     {

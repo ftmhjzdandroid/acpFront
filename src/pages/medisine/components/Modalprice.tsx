@@ -1,20 +1,20 @@
-import { Add, CloseCircle } from "iconsax-react";
-
-import {  useState } from "react";
+import { useState } from "react";
 import { Typography } from "../../../components/atoms";
+import { Add, CloseCircle } from "iconsax-react";
 import { Button } from "../../../components/molecules";
+
 
 type prpps = {
   onclick: () => void;
   productTypeValue?: string;
   onProductTypeChange?: (newType: string) => void;
 };
-export default function   Modalitem(props: prpps) {
-    const [name,setname]=useState('');
-    const [sagfe,setsagfe]=useState('');
-    const [startday,setstartday]=useState('');
-    const [endday,setendday]=useState('');
-    const [description,setdescription]=useState('');
+export default function Modalprice(props: prpps) {
+    const [name,setname]=useState<string>('');
+    const [sagfe,setsagfe]=useState<string>('');
+    const [startday,setstartday]=useState<string>('');
+    const [endday,setendday]=useState<string>('');
+    const [description,setdescription]=useState<string>('');
     const handelsubmit =()=>{
         const items = {
             name : name,
@@ -31,12 +31,15 @@ export default function   Modalitem(props: prpps) {
       <div className="flex justify-between items-start p-1 mb-3 w-full">
         <div className="">
           <Typography type="p" className="pb-2 flex items-center text-[#3949AB]">
-            <Add color="#3949AB"/>
-            افزودن قیمت
+            ویرایش قیمت
           </Typography>
+          <div className="flex gap-1 pb-2">
+            <Typography type="h6" className="text-success-300">نام دارو:</Typography>
+            <Typography>  نبولایزر اولتراسونیک</Typography>
+          </div>
           <div className="flex gap-1">
-            <Typography type="h6" className="text-success-300">خدمت:</Typography>
-            <Typography>مهدیس نرگسی</Typography>
+            <Typography type="h6" className="text-success-300">کدژنتیک:</Typography>
+            <Typography> 1043</Typography>
           </div>
         </div>
         <Button
@@ -46,7 +49,7 @@ export default function   Modalitem(props: prpps) {
         ></Button>
       </div>
       <form onSubmit={handelsubmit}>
-        <div className="">
+        <div className="mt-5">
           <div className=" grid grid-cols-2 mt-3 gap-3">
             <div className="flex flex-col">
              <div className="flex">
@@ -125,3 +128,4 @@ export default function   Modalitem(props: prpps) {
     </div>
   );
 }
+

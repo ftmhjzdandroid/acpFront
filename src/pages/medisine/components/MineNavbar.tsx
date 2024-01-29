@@ -4,16 +4,29 @@ import {
   ArrowUp,
   Sort,
 } from "iconsax-react";
-import { Typography } from "../../atoms";
-import { ArrowBtn } from "../../molecules/arrow-botton";
-import { PopoverDialog } from "../../molecules";
+import { Typography } from "../../../components/atoms";
+import { ArrowBtn } from "../../../components/molecules/arrow-botton";
+import { PopoverDialog } from "../../../components/molecules";
+
 
 export default function MineNavbar() {
   return (
     <div className="h-12 my-3 w-full flex text-[#54575B] items-center justify-between">
       <div className="flex gap-5">
         <div className="flex items-center gap-2">
-          <Typography type="h4">کدخدمت </Typography>
+          <Typography type="h4">قیمت در تعهد</Typography>
+          <ArrowBtn
+            borderColo="border-brand-800"
+            children={<ArrowUp className="text-brand-800" />}
+            className="p-1"
+          />
+          <ArrowBtn
+            children={<ArrowDown className="text-neutral-400" />}
+            className="p-1 border-neutral-200"
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <Typography type="h4">قیمت IFDA </Typography>
           <ArrowBtn
             borderColo="border-brand-800"
             children={<ArrowUp className="text-brand-800" />}
@@ -25,7 +38,7 @@ export default function MineNavbar() {
           />
         </div>
         <div className="flex items-center gap-3">
-          <Typography type="h4">قیمت پایه</Typography>
+          <Typography type="h4">کدژنتیکی</Typography>
           <ArrowBtn
             borderColo="border-brand-800"
             children={<ArrowUp className="text-brand-800" />}
