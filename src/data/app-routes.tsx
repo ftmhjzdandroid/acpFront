@@ -3,7 +3,7 @@ import { RoutesType } from "../hook/useNavigate";
 import Agreedtraiff from "../pages/Agreedtraiff";
 import Classification from "../pages/Classification";
 import Feature from "../pages/Feature";
-import Medisine from "../pages/Medisine";
+import Medisine from "../pages/medisine";
 import Packing from "../pages/Packing";
 import Proposal from "../pages/Proposal";
 import Rules from "../pages/Rules";

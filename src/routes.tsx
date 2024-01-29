@@ -6,6 +6,7 @@ import Rules from "./pages/Rules";
 import Proposal from "./pages/Proposal";
 import Packing from "./pages/Packing";
 import { ServicesRoutes } from "./pages/services/services-routes";
+import { Medisineroutes } from "./pages/medisine/Medisine-routes";
 
 export const MainRoutes = () => {
   return (
@@ -19,6 +20,7 @@ export const MainRoutes = () => {
         <Route path="/rules/*" element={<Rules />} />
         <Route path="/proposal/*" element={<Proposal />} />
         <Route path="/packing/*" element={<Packing />} />
+        <Route path="/medisine/*" element={<Medisineroutes/>} />
       </Routes>
       <Outlet />
     </>

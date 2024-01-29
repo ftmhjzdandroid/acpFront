@@ -59,12 +59,9 @@ export default function Historymodal(props : Props) {
   return (
     <div>
       <div>
-        <div className="flex gap-3 pb-3">
-          <Timer1 color="#3949AB" variant="Bold" />
           <Typography type="h3" className="text-[#3949AB]">
-            نمایش تاریخچه
+          دارو نبولایزر اولتراسونیک
           </Typography>
-        </div>
         <div className="flex gap-1 pb-4 pr-5">
           <Typography type="h6" className="text-success-300">
             خدمت:

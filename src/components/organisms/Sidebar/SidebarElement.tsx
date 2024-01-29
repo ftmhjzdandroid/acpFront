@@ -16,7 +16,7 @@ export default function SidebarElement(props: ElementFor) {
       className={({ isActive }) =>
         `${
           isActive ? "text-white bg-white/30 rounded-lg " : "text-white/50"
-        }  flex items-center  p-2  items-center m-2  ${
+        }  flex items-center  p-2 m-2  ${
           isopen ? " w-60 " : "w-20 justify-center"
         }`
       }
