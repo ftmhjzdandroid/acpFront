@@ -77,6 +77,7 @@ export default function ShowServisList(props: Props) {
     setIsProfilePopover(false);
     if (e.key == "priceM") navigate.to("/services/pricemanagement");
     if (e.key == "services") navigate.to("/services/editingservices");
+    if (e.key == "law") navigate.to("/services/assignLaw");
     if (e.key == "history") sethistorymodal(true);
     if (e.key == "service") setdeletemodal(true);
     if (e.key == "Rules") setdeleteganonmodal(true);
