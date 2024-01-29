@@ -19,7 +19,7 @@ import { paths } from "./data/app-routes";
 import { AssignmenLaw } from "./pages/services/assignment-law";
 import { MainRoutes } from "./routes";
 import { ConfigProvider } from "antd";
-
+// test commit
 function App() {
   // const [authValidate, { data, isLoading }] = useAuthValidateMutation();
 

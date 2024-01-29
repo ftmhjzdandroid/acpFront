@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography } from "../../components/atoms";
+import { Box, Typography } from "../../../components/atoms";
 import {
   CloseCircle,
   Edit2,
@@ -10,13 +10,15 @@ import {
   Timer1,
   Trash,
 } from "iconsax-react";
-import { Badge } from "../../components/atoms/badge";
-import { useCustomNav } from "../../hook/useNavigate";
-import { Modal } from "../../components/molecules";
+import { Badge } from "../../../components/atoms/badge";
+import { useCustomNav } from "../../../hook/useNavigate";
+import { Modal } from "../../../components/molecules";
 import Historymodal from "./Historymodal";
 import { Menu } from "antd";
-import { getItem } from "../../models/menu";
+import { getItem } from "../../../models/menu";
 import type { MenuProps } from "antd";
+import Deletedmodal from "./Deletedmodal";
+import Deleteganonmodal from "./Deleteganonmodal";
 
 type Props = {
   index: number;
@@ -34,7 +36,9 @@ type Props = {
 export default function ShowServisList(props: Props) {
   const { item, index, gridcolse } = props;
   const [isProfilePopover, setIsProfilePopover] = useState<boolean>(false);
-  const [modal, setmodal] = useState<boolean>(false);
+  const [historymodal, sethistorymodal] = useState<boolean>(false);
+  const [deletemodal, setdeletemodal] = useState<boolean>(false);
+  const [deleteganonmodal, setdeleteganonmodal] = useState<boolean>(false);
   const navigate = useCustomNav();
 
   const items: MenuProps["items"] = [
@@ -65,28 +69,57 @@ export default function ShowServisList(props: Props) {
     ),
 
     getItem("حذف", "remove", <Trash size="18" className="text-neutral-700" />, [
-      getItem("خدمت", "services", null),
+      getItem("خدمت", "service", null),
       getItem("قوانین", "Rules", null),
     ]),
   ];
   const onClick: MenuProps["onClick"] = (e) => {
     setIsProfilePopover(false);
     if (e.key == "priceM") navigate.to("/services/pricemanagement");
-    if (e.key == "history") setmodal(true);
+    if (e.key == "services") navigate.to("/services/editingservices");
+    if (e.key == "history") sethistorymodal(true);
+    if (e.key == "service") setdeletemodal(true);
+    if (e.key == "Rules") setdeleteganonmodal(true);
   };
   return (
     <>
       <Modal
-        isOpen={modal}
+        isOpen={historymodal}
         children={
           <Historymodal
             onclose={() => {
-              setmodal(false);
+              sethistorymodal(false);
             }}
           />
         }
         onBackdrop={() => {
-          setmodal(false);
+          sethistorymodal(false);
+        }}
+      />
+      <Modal
+        isOpen={deletemodal}
+        children={
+          <Deletedmodal
+            onclose={() => {
+              setdeletemodal(false);
+            }}
+          />
+        }
+        onBackdrop={() => {
+          setdeletemodal(false);
+        }}
+      />
+      <Modal
+        isOpen={deleteganonmodal}
+        children={
+          <Deleteganonmodal
+            onclose={() => {
+              setdeleteganonmodal(false);
+            }}
+          />
+        }
+        onBackdrop={() => {
+          setdeleteganonmodal(false);
         }}
       />
       <div

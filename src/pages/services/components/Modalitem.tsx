@@ -1,6 +1,6 @@
 import { Add, CloseCircle } from "iconsax-react";
-import { Typography } from "../../components/atoms";
-import { Button } from "../../components/molecules";
+import { Typography } from "../../../components/atoms";
+import { Button } from "../../../components/molecules";
 
 import {  useState } from "react";
 
@@ -30,11 +30,11 @@ export default function   Modalitem(props: prpps) {
     <div>
       <div className="flex justify-between items-start p-1 mb-3 w-full">
         <div className="">
-          <Typography type="p" className="pb-1 flex items-center  text-[#3949AB]">
+          <Typography type="p" className="pb-2 flex items-center text-[#3949AB]">
             <Add color="#3949AB"/>
             افزودن قیمت
           </Typography>
-          <div className="flex">
+          <div className="flex gap-1">
             <Typography type="h6" className="text-success-300">خدمت:</Typography>
             <Typography>مهدیس نرگسی</Typography>
           </div>

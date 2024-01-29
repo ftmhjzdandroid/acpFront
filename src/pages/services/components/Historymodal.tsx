@@ -1,7 +1,7 @@
 import React from "react";
-import { Typography } from "../../components/atoms";
+import { Typography } from "../../../components/atoms";
 import { Timer1 } from "iconsax-react";
-import { Button } from "../../components/molecules";
+import { Button } from "../../../components/molecules";
 type Props={
     onclose : ()=> void
 }

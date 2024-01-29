@@ -16,7 +16,10 @@ export type RoutesType =
   | "/assignLaw"
   | "/services/assignLaw"
   | "/services/history"
-  |"/services/pricemanagement";
+  |"/services/pricemanagement"
+  |"/services/editingservices"
+  |"/services/editingservusespage2"
+  |""
 
 export const useCustomNav = () => {
   const navigation = useNavigate();

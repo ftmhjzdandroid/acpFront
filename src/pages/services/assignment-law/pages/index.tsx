@@ -2,7 +2,7 @@ import { Add, ArrowLeft } from "iconsax-react";
 import { Typography } from "../../../../components/atoms";
 import { useState } from "react";
 import { Button, Modal } from "../../../../components/molecules";
-import Modalitem from "../../../components/Modalitem";
+import Modalitem from "../../components/Modalitem";
 import { useCustomNav } from "../../../../hook/useNavigate";
 
 
