@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { Typography } from "../../atoms";
-import { ArrowDown2, ArrowLeft, Folder2, TickCircle } from "iconsax-react";
+import { ArrowDown2, Folder2, TickCircle } from "iconsax-react";
 import { Badge } from "../../atoms/badge";
 import { folderItem } from "./data";
-import Breadcrumbs from "../../atoms/breadcrumbs";
+import { useNavigate } from "react-router-dom";
 
 function Folders() {
   const [showFolder, setShowFolder] = useState<boolean>(true);
+  const navigate = useNavigate();
+
+  const handleNavigateToPage = (id?: string) => {
+    navigate(`/services/assignLaw/?id=${id}`, { state: { id: id } });
+  };
 
   return (
     <>
-      <div className="border-b mb-10 flex justify-between items-center cursor-pointer">
-        <Breadcrumbs links={[{ text: "پوشه اصلی شریک کاری", to: "/" }]} />
-        <ArrowLeft />
-      </div>
       <div className="flex duration-100 trantion-all gap-4 items-center rounded-md  border-r-2 border-[#3949AB] pr-2 my-4">
         <Typography type="h4">پوشه</Typography>
         <Badge
@@ -31,7 +32,10 @@ function Folders() {
       <div className="grid grid-cols-3 gap-2 mb-8">
         {showFolder &&
           folderItem.folder.map((folder) => (
-            <div className="cursor-pointer bg-neutral-50 rounded-md p-2  border-neutral-200 border">
+            <div
+              onClick={() => handleNavigateToPage(folder.id)}
+              className="cursor-pointer bg-neutral-50 rounded-md p-2  border-neutral-200 border"
+            >
               <div className="flex items-center gap-2">
                 <Folder2 variant="Bold" color="#3949AB" />
                 <Typography type="h4" className="text-neutral-800">

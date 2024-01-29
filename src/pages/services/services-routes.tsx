@@ -11,7 +11,7 @@ export const ServicesRoutes = () => {
     <>
       <Routes>
         <Route path="/" element={<Services />} />
-        <Route path="/assignLaw" element={<AssignmenLaw />} />
+        <Route path="/assignLaw/:id?" element={<AssignmenLaw />} />
         <Route path="/pricemanagement" element={<PriceManagement/>}/>
         <Route path="/editingservices" element={<Editingservices/>}/>
         <Route path="/editingservusespage2" element={<Editingservusespage2/>}/>

@@ -19,6 +19,7 @@ import { getItem } from "../../../models/menu";
 import { Modal } from "../../../components/molecules";
 import { Box, Typography } from "../../../components/atoms";
 import { Badge } from "../../../components/atoms/badge";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   index: number;
@@ -39,7 +40,7 @@ export default function ShowServisList(props: Props) {
   const [historymodal, sethistorymodal] = useState<boolean>(false);
   const [deletemodal, setdeletemodal] = useState<boolean>(false);
   const [deleteganonmodal, setdeleteganonmodal] = useState<boolean>(false);
-  const navigate = useCustomNav();
+  const navigate = useNavigate();
 
   const items: MenuProps["items"] = [
     getItem(
@@ -75,9 +76,10 @@ export default function ShowServisList(props: Props) {
   ];
   const onClick: MenuProps["onClick"] = (e) => {
     setIsProfilePopover(false);
-    if (e.key == "priceM") navigate.to("/services/pricemanagement");
-    if (e.key == "services") navigate.to("/services/editingservices");
-    if (e.key == "law") navigate.to("/services/assignLaw");
+    if (e.key == "priceM") navigate("/services/pricemanagement");
+    if (e.key == "services") navigate("/services/editingservices");
+    if (e.key == "law")
+      navigate("/services/assignLaw/?id=251351", { state: { id: "12345" } });
     if (e.key == "history") sethistorymodal(true);
     if (e.key == "service") setdeletemodal(true);
     if (e.key == "Rules") setdeleteganonmodal(true);
