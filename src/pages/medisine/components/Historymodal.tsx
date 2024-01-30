@@ -100,7 +100,7 @@ export default function Historymodal(props : Props) {
             <Typography>{list.tizihat}</Typography>
         </div>
       ))}
-      <Button label="بستن" size="small" onClick={props.onclose}  className="border-[#E8E8E9] flex justify-center px-0 mt-3 w-full bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2" ></Button>
+      <Button onClick={props.onclose}  className="border-[#E8E8E9] flex justify-center px-0 mt-3 w-full bg-[#FEFEFE] p-3 pl-20 rounded-md text-slate-500 text-xs border-2" >بستن</Button>
     </div>
   );
 }

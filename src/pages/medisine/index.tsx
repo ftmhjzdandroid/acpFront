@@ -56,8 +56,8 @@ export default function Medisine() {
             در این قسمت میتوان توضیحاتی در موردمدریت دارو و خدمات نوشت.
           </Typography>
         </div>
-        <Button size="small" leftIcon={<Add size="26" className="text-neutral-800" />} className="bg-[#F9C310] rounded-lg py-2 pl-2">
-          
+        <Button className="bg-[#F9C310] min-w-[40px] md:min-w-[40px]">
+          <Add size="26" className="text-neutral-800" />
         </Button>
       </div>
       <hr />

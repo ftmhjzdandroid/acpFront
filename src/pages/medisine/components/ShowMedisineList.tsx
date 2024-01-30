@@ -14,8 +14,9 @@ import { getItem } from "../../../models/menu";
 import { Menu, MenuProps } from "antd";
 import { Modal } from "../../../components/molecules";
 import { Box, Typography } from "../../../components/atoms";
-import { Badge } from "../../../components/atoms/badge";
 import Historymodal from "./Historymodal";
+import Deletedmodal from "./Deletedmodal";
+import Deleteganonmodal from "./Deleteganonmodal";
 
 type Props = {
   index: number;
@@ -87,14 +88,14 @@ export default function ShowMedisineList(props: Props) {
       />
       <Modal
         isOpen={deletemodal}
-        children={<p>del</p>}
+        children={<Deletedmodal onclose={()=>setdeletemodal(false)}/>}
         onBackdrop={() => {
           setdeletemodal(false);
         }}
       />
       <Modal
         isOpen={deleteganonmodal}
-        children={<p>deleted</p>}
+        children={<Deleteganonmodal onclose={()=>setdeleteganonmodal(false)}/>}
         onBackdrop={() => {
           setdeleteganonmodal(false);
         }}

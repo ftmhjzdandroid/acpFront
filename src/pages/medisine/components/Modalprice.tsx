@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Typography } from "../../../components/atoms";
 import { Add, CloseCircle } from "iconsax-react";
 import { Button } from "../../../components/molecules";
+import { PersianDatePicker } from "../../../components/organisms";
 
 
 type prpps = {
@@ -43,10 +44,9 @@ export default function Modalprice(props: prpps) {
           </div>
         </div>
         <Button
-          size="small"
-          leftIcon={<CloseCircle size="24" color="#54575B" />}
+        variant="none"
           onClick={props.onclick}
-        ></Button>
+        ><CloseCircle size="24" color="#54575B" /></Button>
       </div>
       <form onSubmit={handelsubmit}>
         <div className="mt-5">
@@ -87,26 +87,14 @@ export default function Modalprice(props: prpps) {
               <Typography className="py-2">شروع اعتبار</Typography>
               <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="date"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] px-16 py-3 rounded-md text-xs border-2"
-                placeholder="تاریخ شروع اعتبار را وارد کنید"
-                onChange={(e)=>{setstartday(e.target.value)}}
-              />
+            <PersianDatePicker placeholder="تاریخ شروع اعتبار را وارد کنید"/>
             </div>
             <div className="flex flex-col">
               <div className="flex">
               <Typography className="py-2">پایان اعتبار</Typography>
               <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="date"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] px-16 py-3 rounded-md text-xs border-2"
-                placeholder="تاریخ پایان اعتبار را وارد کنید"
-                onChange={(e)=>{setendday(e.target.value)}}
-              />
+            <PersianDatePicker placeholder="تاریخ پایان اعتبار را وارد کنید"/>
             </div>
           </div>
           <div className="flex flex-col">
