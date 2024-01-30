@@ -120,8 +120,8 @@ export default function Modalprice(props: prpps) {
               />
             </div>
             <div className="  grid grid-cols-2 mt-3 gap-4">
-                <Button type="submit" label="به روز رسانی تمامی قیمت ها با کد ژنریک مشابه" className="text-[#3949AB] border-2 border-[#3949AB] p-3" size="small"></Button>
-                <Button type="submit" label="ثبت" className="text-[#eee] bg-[#3949AB] flex items-center justify-center p-3 w-full " size="small"></Button>
+                <Button type="submit"  variant="outline">به روز رسانی تمامی قیمت ها با کد ژنریک مشابه</Button>
+                <Button type="submit" className="w-full ">ثبت</Button>
             </div>
         </div>
       </form>

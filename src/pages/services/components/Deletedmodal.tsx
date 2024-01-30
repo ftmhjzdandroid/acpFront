@@ -1,6 +1,6 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import { Trash } from "iconsax-react";
-import React from "react";
+import { Button } from "../../../components/molecules";
 type Props = {
   onclose: () => void;
 };
@@ -18,19 +18,14 @@ export default function Deletedmodal(props: Props) {
         </Typography>
         <Typography>مهدیس نرگسی</Typography>
       </div>
-      <Typography typeof="h6" className=" mb-5">آیا مایل به حذف خدمت انتخاب شده هستید؟</Typography>
-      <div className="  grid grid-cols-2 mt-3 gap-4 mb-3">
-        <Button
-          className="text-neutral-800 border-2 border-success-300 "
-          size="large"
-          onClick={props.onclose}
-        >
+      <Typography typeof="h6" className=" mb-5">
+        آیا مایل به حذف خدمت انتخاب شده هستید؟
+      </Typography>
+      <div className="grid grid-cols-2 mt-3 gap-4 mb-3">
+        <Button variant="outline" onClick={props.onclose}>
           انصراف
         </Button>
-        <Button className="text-[#eee] bg-[#3949AB]  w-full " size="large">
-          {" "}
-          ثبت
-        </Button>
+        <Button className="w-full"> ثبت</Button>
       </div>
     </div>
   );

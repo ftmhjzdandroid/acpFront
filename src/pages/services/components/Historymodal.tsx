@@ -2,10 +2,10 @@ import { Timer1 } from "iconsax-react";
 import { Typography } from "../../../components/atoms";
 import { Button } from "../../../components/molecules";
 
-type Props={
-    onclose : ()=> void
-}
-export default function Historymodal(props : Props) {
+type Props = {
+  onclose: () => void;
+};
+export default function Historymodal(props: Props) {
   const lists = [
     {
       code: 126,
@@ -54,7 +54,7 @@ export default function Historymodal(props : Props) {
       amal: "قانونی",
       amaldate: "1042/11/6",
       tizihat: "resety",
-    }
+    },
   ];
   return (
     <div>
@@ -91,19 +91,21 @@ export default function Historymodal(props : Props) {
             index % 2 == 1 ? "bg-background-300" : ""
           } grid grid-cols-10 mt-2  p-4 rounded-md text-xs text-center`}
         >
-            <Typography>{list.code}</Typography>
-            <Typography>{list.name}</Typography>
-            <Typography>{list.namad}</Typography>
-            <Typography>{list.shenase}</Typography>
-            <Typography>{list.jencod}</Typography>
-            <Typography>{list.startday}</Typography>
-            <Typography>{list.endday}</Typography>
-            <Typography>{list.amal}</Typography>
-            <Typography>{list.amaldate}</Typography>
-            <Typography>{list.tizihat}</Typography>
+          <Typography>{list.code}</Typography>
+          <Typography>{list.name}</Typography>
+          <Typography>{list.namad}</Typography>
+          <Typography>{list.shenase}</Typography>
+          <Typography>{list.jencod}</Typography>
+          <Typography>{list.startday}</Typography>
+          <Typography>{list.endday}</Typography>
+          <Typography>{list.amal}</Typography>
+          <Typography>{list.amaldate}</Typography>
+          <Typography>{list.tizihat}</Typography>
         </div>
       ))}
-      <Button label="بستن" size="small" onClick={props.onclose}  className="border-[#E8E8E9] flex justify-center px-0 mt-3 w-full bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2" ></Button>
+      <Button variant="outline" onClick={props.onclose} className="w-full mt-5">
+        بستن
+      </Button>
     </div>
   );
 }

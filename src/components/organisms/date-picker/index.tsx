@@ -4,9 +4,9 @@ import { InputAnimatedPlaceHolder } from "../../molecules";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { Add, Calendar } from "iconsax-react";
-import { Box } from "../../atoms";
+import { Box, Input } from "../../atoms";
 export type TypeDatePicker = DateObject;
-export class DatePickerClass extends DateObject { }
+export class DatePickerClass extends DateObject {}
 interface IProps {
   dates?: TypeDatePicker | TypeDatePicker[];
   isError?: boolean;
@@ -34,7 +34,7 @@ export const PersianDatePicker = (props: IProps) => {
     format,
     plugins,
     dates,
-    onChange = () => { },
+    onChange = () => {},
     isError,
     placeholder = "نسخه در آینده",
     pickerMode,
@@ -42,11 +42,11 @@ export const PersianDatePicker = (props: IProps) => {
     minDate,
     monthFormat,
     render,
-    onBlur = () => { },
+    onBlur = () => {},
     name = "",
     id = "",
-    onDateClear = () => { },
-    onClick = () => { }
+    onDateClear = () => {},
+    onClick = () => {},
   } = props;
 
   let dateFormat = format || "YYYY/MM/DD";
@@ -100,8 +100,9 @@ export const PersianDatePicker = (props: IProps) => {
   return (
     <>
       <span
-        className={`absolute inset-0 z-20 rounded-2xl transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        className={`absolute inset-0 z-20 rounded-2xl transition-opacity duration-300 ${
+          open ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
         onClick={handleCloseDatePicker}
       ></span>
 
@@ -133,7 +134,7 @@ export const PersianDatePicker = (props: IProps) => {
             render(value, openCalendar)
           ) : (
             <Box className="relative">
-              <InputAnimatedPlaceHolder
+              <Input
                 refInput={calanderInputRef}
                 name={name}
                 id={id}
@@ -156,6 +157,7 @@ export const PersianDatePicker = (props: IProps) => {
                   <Add className="rotate-45" onClick={onRemoveDate} />
                 )}
                 <Calendar
+                  color="#F9C310"
                   onClick={() => {
                     openCalendar();
                     setOpen(true);

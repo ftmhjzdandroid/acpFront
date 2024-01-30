@@ -2,6 +2,8 @@ import { Add } from "iconsax-react";
 import { Typography } from "../../components/atoms";
 import ShowServisList from "./components/ShowServisList";
 import MineNavbar from "../../components/organisms/navbar/MineNavbar";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { AssignmenLaw } from "./assignment-law";
 import { Button } from "../../components/molecules";
 
 export default function Services() {
