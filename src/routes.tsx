@@ -7,6 +7,9 @@ import Proposal from "./pages/Proposal";
 import Packing from "./pages/Packing";
 import { ServicesRoutes } from "./pages/services/services-routes";
 import { Medisineroutes } from "./pages/medisine/Medisine-routes";
+import Agreedtraiff from "./pages/agreedtraiff";
+import Typerouts from "./pages/type/type-routs";
+
 
 export const MainRoutes = () => {
   return (
@@ -15,7 +18,8 @@ export const MainRoutes = () => {
         <Route path="/" element={<Navigate replace to="/services" />} />
         <Route path="/services/*" element={<ServicesRoutes />} />
         <Route path="/sine/*" element={<Sine />} />
-        <Route path="/type/*" element={<Type />} />
+        <Route path="/type/*" element={<Typerouts />} />
+        <Route path="/agreedtraiff/*" element={<Agreedtraiff/>} />
         <Route path="/setting/*" element={<Setting />} />
         <Route path="/rules/*" element={<Rules />} />
         <Route path="/proposal/*" element={<Proposal />} />

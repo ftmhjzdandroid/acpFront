@@ -1,6 +1,6 @@
 import React from "react";
 import { RoutesType } from "../hook/useNavigate";
-import Agreedtraiff from "../pages/Agreedtraiff";
+import Agreedtraiff from "../pages/agreedtraiff";
 import Classification from "../pages/Classification";
 import Feature from "../pages/Feature";
 import Medisine from "../pages/medisine";

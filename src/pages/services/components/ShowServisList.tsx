@@ -78,8 +78,8 @@ export default function ShowServisList(props: Props) {
     setIsProfilePopover(false);
     if (e.key == "priceM") navigate("/services/pricemanagement");
     if (e.key == "services") navigate("/services/editingservices");
-    if (e.key == "law")
-      navigate("/services/assignLaw/?id=251351", { state: { id: "12345" } });
+    if (e.key == "law")navigate("/services/assignLaw/?id=251351", { state: { id: "12345" } });
+    if (e.key == "type")navigate("/services/assignLaw/type/?id=2513", { state: { id: "123456" } });
     if (e.key == "history") sethistorymodal(true);
     if (e.key == "service") setdeletemodal(true);
     if (e.key == "Rules") setdeleteganonmodal(true);

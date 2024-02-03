@@ -4,7 +4,7 @@ module.exports = {
     "./src/**/*.{html,js,ts,tsx}",
     "../**/src/**/*.{html,js,ts,tsx}",
     "./**/*.{ts,tsx}",
-    // "../../../packages/components/**/*.{js,ts,jsx,tsx}", // here is path to Tailwind CSS components package
+    "../../../packages/components/**/*.{js,ts,jsx,tsx}", // here is path to Tailwind CSS components package
   ],
   theme: {
     extend: {

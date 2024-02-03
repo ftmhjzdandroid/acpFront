@@ -20,6 +20,7 @@ export type RoutesType =
   |"/services/editingservices"
   |"/medisine/pricemanagement"
   |"/medisine/editingservices"
+  |"/medisine/law"
 
 export const useCustomNav = () => {
   const navigation = useNavigate();

@@ -73,6 +73,7 @@ export default function ShowMedisineList(props: Props) {
     setIsProfilePopover(false);
     if (e.key == "services") navigate.to("/medisine/editingservices");
     if (e.key == "priceM") navigate.to("/medisine/pricemanagement");
+    if (e.key == "law") navigate.to("/medisine/law");
     if (e.key == "history") sethistorymodal(true);
     if (e.key == "service") setdeletemodal(true);
     if (e.key == "Rules") setdeleteganonmodal(true);

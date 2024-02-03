@@ -1,8 +1,9 @@
 import { Add, CloseCircle } from "iconsax-react";
 
 import { useState } from "react";
-import { Typography } from "../../../components/atoms";
+import { Input, Typography } from "../../../components/atoms";
 import { Button } from "../../../components/molecules";
+import { PersianDatePicker } from "../../../components/organisms";
 
 type prpps = {
   onclick: () => void;
@@ -26,6 +27,7 @@ export default function Modalitem(props: prpps) {
     console.log();
   };
   // props.onProductTypeChange('')
+
   return (
     <div>
       <div className="flex justify-between items-start p-1 mb-3 w-full">
@@ -59,30 +61,14 @@ export default function Modalitem(props: prpps) {
                 <Typography className="pb-2">نام خدمت</Typography>
                 <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="text"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"
-                placeholder="قیمت پایه را وارد کنید"
-                onChange={(e) => {
-                  setname(e.target.value);
-                }}
-              />
+              <Input type="text" placeholder="قیمت پایه را وارد کنید" className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"/>
             </div>
             <div className="flex flex-col">
               <div className="flex">
                 <Typography className="pb-2">سقف قیمت بیمه</Typography>
                 <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="text"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"
-                placeholder="سقف قیمت بیمه را وارد کنید"
-                onChange={(e) => {
-                  setsagfe(e.target.value);
-                }}
-              />
+               <Input type="text"className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"placeholder="سقف قیمت بیمه را وارد کنید"/>
             </div>
           </div>
         </div>
@@ -93,30 +79,14 @@ export default function Modalitem(props: prpps) {
                 <Typography className="py-2">شروع اعتبار</Typography>
                 <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="date"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] px-16 py-3 rounded-md text-xs border-2"
-                placeholder="تاریخ شروع اعتبار را وارد کنید"
-                onChange={(e) => {
-                  setstartday(e.target.value);
-                }}
-              />
+              <PersianDatePicker placeholder="تاریخ شروع اعتبار را وارد کنید"/>
             </div>
             <div className="flex flex-col">
               <div className="flex">
                 <Typography className="py-2">پایان اعتبار</Typography>
                 <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
-                type="date"
-                required
-                className="border-[#E8E8E9] bg-[#FEFEFE] px-16 py-3 rounded-md text-xs border-2"
-                placeholder="تاریخ پایان اعتبار را وارد کنید"
-                onChange={(e) => {
-                  setendday(e.target.value);
-                }}
-              />
+              <PersianDatePicker placeholder="تاریخ پایان اعتبار را وارد کنید"/>
             </div>
           </div>
           <div className="flex flex-col">

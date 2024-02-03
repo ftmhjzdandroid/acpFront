@@ -74,7 +74,7 @@ export default function Services() {
         <ShowServisList
           item={item}
           index={index}
-          gridcolse="grid grid-cols-7"
+          gridcolse="grid grid-cols-7 "
         />
       ))}
     </div>
