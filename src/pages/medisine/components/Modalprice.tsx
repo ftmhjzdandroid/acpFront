@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Typography } from "../../../components/atoms";
+import { Input, Typography } from "../../../components/atoms";
 import { Add, CloseCircle } from "iconsax-react";
 import { Button } from "../../../components/molecules";
 import { PersianDatePicker } from "../../../components/organisms";
@@ -56,12 +56,10 @@ export default function Modalprice(props: prpps) {
              <Typography className="pb-2">نام خدمت</Typography>
              <Typography className="pb-2 text-red-600">*</Typography>
              </div>
-              <input
+              <Input
                 type="text"
-                required
                 className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"
                 placeholder="قیمت پایه را وارد کنید"
-                onChange={(e)=>{setname(e.target.value)}}
               />
             </div>
             <div className="flex flex-col">
@@ -70,12 +68,10 @@ export default function Modalprice(props: prpps) {
               <Typography className="pb-2">سقف قیمت بیمه</Typography>
               <Typography className="pb-2 text-red-600">*</Typography>
               </div>
-              <input
+              <Input
                 type="text"
-                required
                 className="border-[#E8E8E9] bg-[#FEFEFE] p-3 pl-20 rounded-md text-xs border-2"
                 placeholder="سقف قیمت بیمه را وارد کنید"
-                onChange={(e)=>{setsagfe(e.target.value)}}
               />
             </div>
           </div>
@@ -99,12 +95,10 @@ export default function Modalprice(props: prpps) {
           </div>
           <div className="flex flex-col">
               <Typography className="py-2">توضیحات</Typography>
-              <input
+              <Input
                 type="text"
-                required
                 className="border-[#E8E8E9] bg-[#FEFEFE]  py-3 pb-20 px-3 rounded-md text-xs border-2"
                 placeholder=" توضیحات را وارد کنید "
-                onChange={(e)=>{setdescription(e.target.value)}}
               />
             </div>
             <div className="  grid grid-cols-2 mt-3 gap-4">

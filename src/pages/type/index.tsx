@@ -1,9 +1,11 @@
-import { Typography } from "../../components/atoms";
-import { Add, Home2 } from "iconsax-react";
+import { Box, Typography } from "../../components/atoms";
+import { Add, Edit2, Home2, More, Trash } from "iconsax-react";
 import { Button } from "../../components/molecules";
 import { TabView } from "../../components/organisms/tabview";
 
+
 export default function Type() {
+
   return (
     <div>
       <div className="flex flex-col mb-5">
@@ -21,8 +23,8 @@ export default function Type() {
           { title: "مرکز", key: "1", route: "cparty" },
           { title: "دارو", key: "2", route: "drag" },
           { title: "تجهیزات", key: "3", route: "rig" },
-          { title: "اوازم مصرفی", key: "4", route: "consumables" },
-          { title: "خدمات", key: "5", route: "servicees" },
+          { title: "اوازم مصرفی", key: "4", route: "comsumables" },
+          { title: "خدمات", key: "5", route: "services" },
           { title: "پروانه", key: "6", route: "business" },
           { title: "همکار", key: "7", route: "partners" },
           { title: "نشان", key: "8", route: "sines" },
@@ -30,12 +32,11 @@ export default function Type() {
       />
       <div className="flex justify-end w-full">
       <Button className="bg-[#F9C310] min-w-[40px] md:min-w-[40px]">
-        <Add size="26" className="text-neutral-800" />
+        <Add size="26"  
+            className="text-neutral-800"
+           />
       </Button>
       </div>
-
-
-
     </div>
   );
 }

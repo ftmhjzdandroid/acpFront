@@ -1,4 +1,5 @@
 import React, { ReactFragment, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface IProps<T> {
     data?: T[];
@@ -17,7 +18,7 @@ const TabBar = <T extends { title: string, key: string, name?: string }>(props: 
     const [activeTab, setActiveTab] = useState<T>(data[activeIndex]);
 
     if (data.length === 0) return <></>;
-
+const navigate = useNavigate();
     return (
         <>
             <ul
