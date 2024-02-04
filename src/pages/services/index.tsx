@@ -2,11 +2,11 @@ import { Add } from "iconsax-react";
 import { Typography } from "../../components/atoms";
 import ShowServisList from "./components/ShowServisList";
 import MineNavbar from "../../components/organisms/navbar/MineNavbar";
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
-import { AssignmenLaw } from "./assignment-law";
+import { useNavigate, } from "react-router-dom";
 import { Button } from "../../components/molecules";
 
 export default function Services() {
+  const navigate = useNavigate();
   const list = [
     {
       name: "مهدیس صبوری",
@@ -54,9 +54,11 @@ export default function Services() {
             در این قسمت میتوان توضیحاتی در مورد مدیریت خدمات نوشت.
           </Typography>
         </div>
-        <Button className="bg-[#F9C310] min-w-[40px] md:min-w-[40px]">
+        <div title="افزودن خدمت جدید">
+        <Button onClick={()=>navigate("add")} className="bg-[#F9C310] min-w-[40px] md:min-w-[40px]">
           <Add size="26" className="text-neutral-800" />
         </Button>
+        </div>
       </div>
       <hr />
       <MineNavbar />
