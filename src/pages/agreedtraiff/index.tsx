@@ -6,11 +6,11 @@ export default function Agreedtraiff() {
     {
       center : "545",
       state : "کشور",
-      city : "",
+      city : "تهران ",
       owner : "دولتی",
       hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
+      partner : "تهران  ",
+      colleague : "تهران  ",
       anes : "20000",
       tech : "20000",
       pro : "20000",
@@ -21,11 +21,11 @@ export default function Agreedtraiff() {
     {
       center : "545",
       state : "کشور",
-      city : "",
+      city : "تهران ",
       owner : "دولتی",
       hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
+      partner : "تهران  ",
+      colleague : "تهران  ",
       anes : "20000",
       tech : "20000",
       pro : "20000",
@@ -36,11 +36,11 @@ export default function Agreedtraiff() {
     {
       center : "545",
       state : "کشور",
-      city : "",
+      city : "تهران ",
       owner : "دولتی",
       hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
+      partner : "تهران  ",
+      colleague : "تهران  ",
       anes : "20000",
       tech : "20000",
       pro : "20000",
@@ -53,21 +53,23 @@ export default function Agreedtraiff() {
   return (
     <div>
      <Heder/>
-      <div className="bg-[#F4F5FA] text-[#3949AB] text-xs mt-5 p-4 flex  rounded-md ">
-          <div className="w-[71px] text-center">شناسه</div >
-          <div className="w-[71px] text-center">استان</div >
-          <div className="w-[71px] text-center">شهراستان</div >
-          <div className="w-[71px] text-center">مالکیت</div >
-          <div className="w-[71px] text-center">هشتک</div >
-          <div className="w-[71px] text-center">شریک کاری</div >
-          <div className="w-[71px] text-center">همکار</div >
-          <div className="w-[71px] text-center">بیهوشی</div >
-          <div className="w-[71px] text-center">فنی</div >
-          <div className="w-[71px] text-center">حرفه ای</div >
-          <div className="w-[71px] text-center">بیهوشی دولتی</div >
-          <div className="w-[71px] text-center">فنی دولتی</div >
-          <div className="w-[71px] text-center">حرفه ای دولتی</div >
-      </div>
+      <table className="bg-[#F4F5FA] text-[#3949AB] text-xs mt-5 p-4 w-full rounded-md ">
+        <tr>
+          <th className="text-center py-3">شناسه</th >
+          <th className="text-center py-3">استان</th >
+          <th className="text-center py-3">شهراستان</th >
+          <th className="text-center py-3">مالکیت</th >
+          <th className="text-center py-3">هشتک</th >
+          <th className="text-center py-3">شریک کاری</th >
+          <th className="text-center py-3">همکار</th >
+          <th className="text-center py-3">بیهوشی</th >
+          <th className="text-center py-3">فنی</th >
+          <th className="text-center py-3">حرفه ای</th >
+          <th className="text-center py-3">بیهوشی دولتی</th >
+          <th className="text-center py-3">فنی دولتی</th >
+          <th className="text-center py-3">حرفه ای دولتی</th >
+          </tr>
+      </table>
       {list.map((item,index)=>( 
         <ShowServisList key={index} index={index} item={item}/>
       ))}

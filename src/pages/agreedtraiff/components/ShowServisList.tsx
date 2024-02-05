@@ -57,25 +57,26 @@ export default function ShowServisList(props: Props) {
   };
   return (
     <>
-      <div
+      <table
         key={index}
         className={`${
           index % 2 == 0 ? "bg-background-300" : ""
-        } mt-2  p-4 rounded-md text-xs flex`}
+        } mt-2 rounded-md text-xs w-full`}
       >
-        <div className="w-[71px] text-center">{item.center}</div>
-        <div className="w-[71px] text-center">{item.state}</div>
-        <div className="w-[71px] text-center">{item.city}</div>
-        <div className="w-[71px] text-center">{item.owner}</div>
-        <div className="w-[71px] text-center">{item.hashtak}</div>
-        <div className="w-[71px] text-center">{item.partner}</div>
-        <div className="w-[71px] text-center">{item.colleague}</div>
-        <div className="w-[71px] text-center">{item.anes}</div>
-        <div className="w-[71px] text-center">{item.tech}</div>
-        <div className="w-[71px] text-center">{item.pro}</div>
-        <div className="w-[71px] text-center">{item.goveranes}</div>
-        <div className="w-[71px] text-center">{item.govertech}</div>
-        <div className="w-[71px] text-center flex relative">
+        <tr>
+        <th className="py-3 text-center">{item.center}</th>
+        <th className="py-3 text-center">{item.state}</th>
+        <th className="py-3 text-center">{item.city}</th>
+        <th className="py-3 text-center">{item.owner}</th>
+        <th className="py-3 text-center">{item.hashtak}</th>
+        <th className="py-3 text-center">{item.partner}</th>
+        <th className="py-3 text-center">{item.colleague}</th>
+        <th className="py-3 text-center">{item.anes}</th>
+        <th className="py-3 text-center">{item.tech}</th>
+        <th className="py-3 text-center">{item.pro}</th>
+        <th className="py-3 text-center">{item.goveranes}</th>
+        <th className="py-3 text-center">{item.govertech}</th>
+        <th className="py-3 text-center flex relative">
           {item.goverpro}
           <More
             size="25"
@@ -99,8 +100,9 @@ export default function ShowServisList(props: Props) {
               />
             )}
           </Box>
-        </div>
-      </div>
+        </th>
+        </tr>
+      </table>
     </>
   );
 }
