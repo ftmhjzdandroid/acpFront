@@ -7,6 +7,7 @@ import {
 import { Typography } from "../../../components/atoms";
 import { ArrowBtn } from "../../../components/molecules/arrow-botton";
 import { PopoverDialog } from "../../../components/molecules";
+import Filteritems from "./filteritems";
 
 
 export default function MineNavbar() {
@@ -57,9 +58,10 @@ export default function MineNavbar() {
         />
 
         <PopoverDialog
-          renders={() => <Typography>jj</Typography>}
+          renders={() =><Filteritems/>}
           keysLabel="label"
           list={[{ id: 1, label: "jjjj" }]}
+          position="bottom"
           children={
             <div className="flex items-center rounded-md border text-neutral-800 p-1">
               <Sort className="text-neutral-800" />

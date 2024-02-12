@@ -1,55 +1,10 @@
+import { Outlet, Route, Routes } from "react-router-dom";
 import ShowServisList from "./components/ShowServisList";
 import Heder from "./components/heder";
+import Mprice from "./mprice";
+import Vprice from "./vprice";
 
 export default function Agreedtraiff() {
-  const list = [
-    {
-      center : "545",
-      state : "کشور",
-      city : "",
-      owner : "دولتی",
-      hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
-      anes : "20000",
-      tech : "20000",
-      pro : "20000",
-      goveranes : "20000",
-      govertech : "20000",
-      goverpro : "20000"
-    },
-    {
-      center : "545",
-      state : "کشور",
-      city : "",
-      owner : "دولتی",
-      hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
-      anes : "20000",
-      tech : "20000",
-      pro : "20000",
-      goveranes : "20000",
-      govertech : "20000",
-      goverpro : "20000"
-    },
-    {
-      center : "545",
-      state : "کشور",
-      city : "",
-      owner : "دولتی",
-      hashtak : "همه کد ها",
-      partner : "",
-      colleague : "",
-      anes : "20000",
-      tech : "20000",
-      pro : "20000",
-      goveranes : "20000",
-      govertech : "20000",
-      goverpro : "20000"
-    },
-  ]
-
   return (
     <div>
      <Heder/>
@@ -68,9 +23,12 @@ export default function Agreedtraiff() {
           <div className="w-[71px] text-center">فنی دولتی</div >
           <div className="w-[71px] text-center">حرفه ای دولتی</div >
       </div>
-      {list.map((item,index)=>( 
-        <ShowServisList key={index} index={index} item={item}/>
-      ))}
+      
+      <Routes>
+        <Route path="/mprice" element={<Mprice/>}  />
+        <Route path="/vprice" element={<Vprice/>}  />
+      </Routes>
+      <Outlet />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
 import { Typography } from "../../atoms";
 import { ArrowBtn } from "../../molecules/arrow-botton";
 import { PopoverDialog } from "../../molecules";
+import Filteritems from "../../../pages/services/components/filteritems";
 
 export default function MineNavbar() {
   return (
@@ -37,14 +38,15 @@ export default function MineNavbar() {
           />
         </div>
       </div>
-      <div className="flex gap-2 text-[#3949AB] items-center justify-center ">
+      <div className="flex gap-2 items-center justify-center ">
         <ArrowRotateLeft
           size="30"
           className="cursor-pointer text-neutral-800"
         />
 
         <PopoverDialog
-          renders={() => <Typography>jj</Typography>}
+          renders={() => <Filteritems/>}
+          position="bottom"
           keysLabel="label"
           list={[{ id: 1, label: "jjjj" }]}
           children={

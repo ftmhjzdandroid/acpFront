@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Stepper } from '../../../../../components/templates/stepper';
-import { Typography } from '../../../../../components/atoms';
-import MedisineProperty from '../../../../medisine/pages/editingservises/medisine-property';
-import MedisineTypeAssignmet from '../../../../medisine/pages/editingservises/medisine-type-assignment';
-import { ArrowLeft } from 'iconsax-react';
-import { useCustomNav } from '../../../../../hook/useNavigate';
+import { useState } from "react";
+import { useCustomNav } from "../../hook/useNavigate";
+import MedisineProperty from "./pages/editingservises/medisine-property";
+import MedisineTypeAssignmet from "./pages/editingservises/medisine-type-assignment";
+import { Typography } from "../../components/atoms";
+import { ArrowLeft } from "iconsax-react";
+import { Stepper } from "../../components/templates/stepper";
 
 export default function Addservises() {
     const [activeStep, setActiveStep] = useState(0);
@@ -43,7 +43,7 @@ const navigate = useCustomNav();
       <>
        <div className='flex w-full items-center justify-between'>
        <Typography type="h3" className="p-5 text-blue-900">
-           افزودن خدمت جدید
+       افزودن دارو و لوازم مصرفی جدید
         </Typography>
         <ArrowLeft color='#3949AB' className='cursor-pointer' onClick={()=>navigate.back()}/>
        </div>
@@ -58,8 +58,8 @@ const navigate = useCustomNav();
           stepperMode="horizontal"
           onClickNext={handleSubmit}
           onClickPrev={handlePrev}
-          // onLastStepButton={onRegister}
-          // lastStepLoading={false}
+          onLastStepButton={onRegister}
+          lastStepLoading={false}
         />
       </>
     );

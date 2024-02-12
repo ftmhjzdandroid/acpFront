@@ -62,7 +62,7 @@ export const PopoverDialog = <T,>(props: IProps<T>) => {
             <Popover.Panel
               className={`absolute z-50 ${classNamePanel.join(
                 " "
-              )} max-h-[calc(100vh-50px)] overflow-auto w-44 border rounded-md border-br`}
+              )} max-h-[calc(100vh-50px)] overflow-auto w-80 border rounded-md border-br`}
             >
               <Card className="flex flex-col shadow-lg" padding="p-1">
                 {

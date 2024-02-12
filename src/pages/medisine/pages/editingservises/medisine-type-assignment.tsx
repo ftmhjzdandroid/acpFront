@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { TickCircle,} from "iconsax-react";
+import { TickCircle } from "iconsax-react";
 import { useCustomNav } from "../../../../hook/useNavigate";
 import { FolderLayout } from "../../../../components/organisms/folder-layout";
+import Folders from "../../../../components/organisms/folder-layout/folders";
+import { Items } from "../../../../components/organisms/folder-layout/items";
 
 export default function MedisineTypeAssignmet() {
   const Navigate = useCustomNav();
@@ -29,7 +31,8 @@ export default function MedisineTypeAssignmet() {
   ];
   return (
     <>
-      <FolderLayout />
+      <Folders />
+      <Items />
     </>
   );
 }

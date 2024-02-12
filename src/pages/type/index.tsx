@@ -1,5 +1,5 @@
 import { Box, Typography } from "../../components/atoms";
-import { Add, Home,  } from "iconsax-react";
+import { Add, Bag, Candle2, Home, Milk, Notepad, Notepad2, Notification1, Star1, User,  } from "iconsax-react";
 import { Button } from "../../components/molecules";
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import Tab from "../../components/molecules/tab";
@@ -25,13 +25,13 @@ export default function Type() {
       <Tab
         data={[
           { title: "مرکز", key: "1", route: "cparty" ,icon:<Home/>},
-          { title: "دارو", key: "2", route: "drag" ,icon:<Home/>},
-          { title: "تجهیزات", key: "3", route: "rig" ,icon:<Home/>},
-          { title: "اوازم مصرفی", key: "4", route: "comsumables" ,icon:<Home/>},
-          { title: "خدمات", key: "5", route: "services" ,icon:<Home/>},
-          { title: "پروانه", key: "6", route: "business" ,icon:<Home/>},
-          { title: "همکار", key: "7", route: "partners" ,icon:<Home/>},
-          { title: "نشان", key: "8", route: "sines" ,icon:<Home/>},
+          { title: "دارو", key: "2", route: "drags" ,icon:<Milk/>},
+          { title: "تجهیزات", key: "3", route: "rig" ,icon:<Candle2/>},
+          { title: "اوازم مصرفی", key: "4", route: "comsumables" ,icon:<Bag/>},
+          { title: "خدمات", key: "5", route: "services" ,icon:<Notification1/>},
+          { title: "پروانه", key: "6", route: "business" ,icon:<Notepad2/>},
+          { title: "همکار", key: "7", route: "partners" ,icon:<User/>},
+          { title: "نشان", key: "8", route: "sines" ,icon:<Star1/>},
         ]}
         onClick={(tab) => {
           navigate(tab?.route ?? "/");

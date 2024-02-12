@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getItem } from "../../../models/menu";
 import { Menu, MenuProps } from "antd";
-import { TabView } from "../../../components/organisms/tabview";
 import Mpricemodal from "./mpricemodal";
 import Vpricemodal from "./vpricemodal";
+import Tab from "../../../components/molecules/tab";
+import Filteritems from "../../medisine/components/filteritems";
 
 export default function  Heder() {
     const [isProfilePopover, setIsProfilePopover] = useState<boolean>(false);
@@ -30,8 +31,10 @@ export default function  Heder() {
       if (e.key == "mprice") setmpricemodal(true) ;
       if (e.key == "vprice") setvpricemodal(true) ;
     };
+   
   return (
     <>
+    {/* {mpricemodal&& (div)} */}
    <Modal isOpen={mpricemodal} children={<Mpricemodal onclose={()=>setmpricemodal(false)}/>}/>
    <Modal isOpen={vpricemodal} children={<Vpricemodal onclose={()=>setvpricemodal(false)}/>}/>
       <div className="flex w-full justify-between">
@@ -87,12 +90,16 @@ export default function  Heder() {
       </div>
 
 
-      <TabView 
+      <Tab
         data={[
-          { key: "1", route: "sss", title: "قیمت K" },
-          { key: "2", route: "bbb", title: "قیمت ویزیت" },
+          { title: "قیمت K", key: "1", route: "mprice" ,icon:<></>},
+          { title: "قیمت ویزیت", key: "2", route: "vprice" ,icon:<></>},
         ]}
-        className="mx-auto mt-4"
+        className="mx-auto mt-4" 
+         onClick={(tab) => {
+          navigate(tab?.route ?? "/");
+          console.log(tab, "tab");
+        }}
       />
       <div className="flex justify-end gap-3">
       <ArrowRotateLeft
@@ -100,11 +107,11 @@ export default function  Heder() {
           className="cursor-pointer text-neutral-800"
         />
         <PopoverDialog
-        renders={() => <Typography>jj</Typography>}
+        renders={() => <Filteritems />}
         keysLabel="label"
         list={[{ id: 1, label: "jjjj" }]}
         children={
-          <div className="flex items-center rounded-md border text-neutral-800 p-1">
+          <div className="flex items-center rounded-md border cursor-pointer text-neutral-800 p-1">
             <Sort className="text-neutral-800" />
             <Typography type="p" className="m-2">
               فیلترها
