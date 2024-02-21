@@ -109,6 +109,7 @@ export default function  Heder() {
         <PopoverDialog
         renders={() => <Filteritems />}
         keysLabel="label"
+        position="bottom"
         list={[{ id: 1, label: "jjjj" }]}
         children={
           <div className="flex items-center rounded-md border cursor-pointer text-neutral-800 p-1">

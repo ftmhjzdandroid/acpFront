@@ -8,21 +8,23 @@ export default function Agreedtraiff() {
   return (
     <div>
      <Heder/>
-      <div className="bg-[#F4F5FA] text-[#3949AB] text-xs mt-5 p-4 flex  rounded-md ">
-          <div className="w-[71px] text-center">شناسه</div >
-          <div className="w-[71px] text-center">استان</div >
-          <div className="w-[71px] text-center">شهراستان</div >
-          <div className="w-[71px] text-center">مالکیت</div >
-          <div className="w-[71px] text-center">هشتک</div >
-          <div className="w-[71px] text-center">شریک کاری</div >
-          <div className="w-[71px] text-center">همکار</div >
-          <div className="w-[71px] text-center">بیهوشی</div >
-          <div className="w-[71px] text-center">فنی</div >
-          <div className="w-[71px] text-center">حرفه ای</div >
-          <div className="w-[71px] text-center">بیهوشی دولتی</div >
-          <div className="w-[71px] text-center">فنی دولتی</div >
-          <div className="w-[71px] text-center">حرفه ای دولتی</div >
-      </div>
+      <table className="bg-[#F4F5FA] text-[#3949AB] text-xs mt-5 p-4 w-full rounded-md ">
+        <tr>
+          <th className="p-4 text-center">شناسه</th >
+          <th className="p-4 text-center">استان</th >
+          <th className="p-4 text-center">شهراستان</th >
+          <th className="p-4 text-center">مالکیت</th >
+          <th className="p-4 text-center">هشتک</th >
+          <th className="p-4 text-center">شریک کاری</th >
+          <th className="p-4 text-center">همکار</th >
+          <th className="p-4 text-center">بیهوشی</th >
+          <th className="p-4 text-center">فنی</th >
+          <th className="p-4 text-center">حرفه ای</th >
+          <th className="p-4 text-center">بیهوشی دولتی</th >
+          <th className="p-4 text-center">فنی دولتی</th >
+          <th className="p-4 text-center">حرفه ای دولتی</th >
+        </tr>
+      </table>
       
       <Routes>
         <Route path="/mprice" element={<Mprice/>}  />

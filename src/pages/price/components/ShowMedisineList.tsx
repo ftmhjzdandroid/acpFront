@@ -1,4 +1,5 @@
-import { Typography } from "../../../components/atoms";
+import { ArrowCircleDown, ArrowCircleUp, ArrowDown, ArrowUp } from "iconsax-react";
+import { Box, Typography } from "../../../components/atoms";
 
 type Props = {
   index: number;
@@ -48,7 +49,7 @@ switch(item.vaz){
         key={index}
         className={`${
           index % 2 == 0 ? "bg-background-300" : ""
-        } grid grid-cols-7 mt-2  p-4 rounded-md text-xs  ${vazeuat}`}
+        } grid grid-cols-7 mt-2 p-4 rounded-md text-xs text-center ${vazeuat}`}
       >
        
           <Typography className="text-center" type="p">
@@ -56,9 +57,12 @@ switch(item.vaz){
           </Typography>
 
         {item.tqiir && (
-          <Typography className={`${item.t ? "text-success-700":"text-red-700"} text-center`} type="p">
+         <Typography className="flex justify-center" type="p">
+           <div className={`${item.t ? "text-success-700 w-1/3 bg-success-200":"text-red-700 w-1/3 bg-red-200"} p-1 flex justify-between items-center rounded-md`}>
             {item.tqiir}
-          </Typography>
+            {item.t ? <ArrowUp size="18"/> :<ArrowDown size="18"/>}
+          </div>
+         </Typography>
         )}
         {item.tahodprice && (
           <Typography className="text-center" type="p">

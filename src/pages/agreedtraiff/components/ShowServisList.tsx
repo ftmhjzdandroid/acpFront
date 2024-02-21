@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import {
-  CloseCircle,
   Edit2,
-  Link21,
   More,
-  Tag,
-  TickCircle,
-  Timer1,
-  Trash,
+  Trash
 } from "iconsax-react";
 import { Menu } from "antd";
 import type { MenuProps } from "antd";
 import { getItem } from "../../../models/menu";
-import { Modal } from "../../../components/molecules";
-import { Box, Typography } from "../../../components/atoms";
-import { Badge } from "../../../components/atoms/badge";
+import { Box } from "../../../components/atoms";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
@@ -56,26 +49,28 @@ export default function ShowServisList(props: Props) {
     if (e.key == "priceM") navigate("/services/pricemanagement");
   };
   return (
-    <>
-      <div
+   
+      <table
         key={index}
         className={`${
           index % 2 == 0 ? "bg-background-300" : ""
-        } mt-2  p-4 rounded-md text-xs flex`}
+        } mt-2  p-4 rounded-md text-xs w-full`}
       >
-        <div className="w-[71px] text-center">{item.center}</div>
-        <div className="w-[71px] text-center">{item.state}</div>
-        <div className="w-[71px] text-center">{item.city}</div>
-        <div className="w-[71px] text-center">{item.owner}</div>
-        <div className="w-[71px] text-center">{item.hashtak}</div>
-        <div className="w-[71px] text-center">{item.partner}</div>
-        <div className="w-[71px] text-center">{item.colleague}</div>
-        <div className="w-[71px] text-center">{item.anes}</div>
-        <div className="w-[71px] text-center">{item.tech}</div>
-        <div className="w-[71px] text-center">{item.pro}</div>
-        <div className="w-[71px] text-center">{item.goveranes}</div>
-        <div className="w-[71px] text-center">{item.govertech}</div>
-        <div className="w-[71px] text-center flex relative">
+        <tr>
+
+        <th className="py-4 text-center">{item.center}</th>
+        <th className="py-4 text-center">{item.state}</th>
+        <th className="py-4 text-center">{item.city}</th>
+        <th className="py-4 text-center">{item.owner}</th>
+        <th className="py-4 text-center">{item.hashtak}</th>
+        <th className="py-4 text-center">{item.partner}</th>
+        <th className="py-4 text-center">{item.colleague}</th>
+        <th className="py-4 text-center">{item.anes}</th>
+        <th className="py-4 text-center">{item.tech}</th>
+        <th className="py-4 text-center">{item.pro}</th>
+        <th className="py-4 text-center">{item.goveranes}</th>
+        <th className="py-4 text-center">{item.govertech}</th>
+        <th className="py-4 text-center flex relative">
           {item.goverpro}
           <More
             size="25"
@@ -84,23 +79,24 @@ export default function ShowServisList(props: Props) {
               e.stopPropagation();
               setIsProfilePopover(true);
             }}
-          />
+            />
           <Box
             className="z-10"
             handleClickOutside={() => setIsProfilePopover(false)}
-          >
+            >
             {isProfilePopover && (
               <Menu
-                className="absolute left-0"
-                onClick={onClick}
-                style={{ width: 256, fontFamily: "IranYekan" }}
-                mode="inline"
-                items={items}
+              className="absolute left-0"
+              onClick={onClick}
+              style={{ width: 256, fontFamily: "IranYekan" }}
+              mode="inline"
+              items={items}
               />
-            )}
+              )}
           </Box>
-        </div>
-      </div>
-    </>
+        </th>
+              </tr>
+      </table>
+
   );
 }

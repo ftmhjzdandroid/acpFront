@@ -13,7 +13,7 @@ type pop ={
 const Filter=(propps:pop)=> {
 
 const [status , setStatus] = useState<string>("");
-  const navigate = useCustomNav();
+  const navigate = useCustomNav(); 
   // (preveState) => !preveState)
   const chageHandler = (e:any) => {
     setStatus(e.target.name)
