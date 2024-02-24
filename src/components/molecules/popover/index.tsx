@@ -1,6 +1,7 @@
 import React, { Fragment, Ref, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Card, Typography } from "../../atoms";
+import { Size } from "iconsax-react";
 
 interface IProps<T> {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface IProps<T> {
   className?: string;
   keysLabel: string;
   position?: "center" | "bottom" | "top" | "right" | "left";
+  size?: "w-40"|"w-80";
   list: T[];
   onClick?: (item: T) => void;
   renders?: (item: T, index?: number, close?: () => void) => React.ReactNode;
@@ -24,6 +26,7 @@ export const PopoverDialog = <T,>(props: IProps<T>) => {
     keysLabel,
     onClick = () => { },
     position = "center",
+    size = "w-80",
     renders,
     className,
     ref,
@@ -60,9 +63,9 @@ export const PopoverDialog = <T,>(props: IProps<T>) => {
             leaveTo="opacity-0 translate-y-1"
           >
             <Popover.Panel
-              className={`absolute z-50 ${classNamePanel.join(
+              className={`absolute z-50  ${props.size}  ${classNamePanel.join(
                 " "
-              )} max-h-[calc(100vh-50px)] overflow-auto w-80 border rounded-md border-br`}
+              )} max-h-[calc(100vh-50px)] overflow-auto  border rounded-md border-br`}
             >
               <Card className="flex flex-col shadow-lg" padding="p-1">
                 {

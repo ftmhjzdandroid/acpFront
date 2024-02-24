@@ -21,6 +21,7 @@ export type RoutesType =
   |"/medisine/pricemanagement"
   |"/medisine/editingservices"
   |"/medisine/law"
+  |"/type/dragsadd"
 
 export const useCustomNav = () => {
   const navigation = useNavigate();

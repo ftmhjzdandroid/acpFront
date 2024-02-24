@@ -37,6 +37,7 @@ export const PopoverFilter = <T extends { checked: boolean; label: string }>(
     <PopoverDialog
       position="bottom"
       className="w-6"
+      size="w-80"
       list={data}
       keysLabel="name"
       onSelectAll={onSelectAll}

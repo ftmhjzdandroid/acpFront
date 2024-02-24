@@ -11,7 +11,7 @@ export const Medisineroutes =() => {
     <>
     <Routes>
       <Route path="/" element={<Medisine/>} />
-      <Route path="/editingservices" element={<EditMedisineStepper/>  } />
+      <Route path="/editingservices" element={<EditMedisineStepper/>} />
       <Route path="/PriceManagement" element={<PriceManagement/>} />
       <Route path="/law" element={<Attributionitems/>} />
       <Route path="/add" element={<Addservises/>} />

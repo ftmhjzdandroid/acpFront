@@ -62,6 +62,7 @@ export default function MineNavbar() {
           keysLabel="label"
           list={[{ id: 1, label: "jjjj" }]}
           position="bottom"
+          size="w-80"
           children={
             <div className="flex items-center rounded-md border text-neutral-800 p-1">
               <Sort className="text-neutral-800" />

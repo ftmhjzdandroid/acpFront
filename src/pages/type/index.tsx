@@ -39,17 +39,11 @@ export default function Type() {
         }}
       />
 
-      <div className="flex justify-end w-full">
-        <Button className="bg-[#F9C310] min-w-[40px] md:min-w-[40px]">
-          <Add size="26" className="text-neutral-800" />
-        </Button>
-      </div>
-
       <Routes>
         <Route path="/cparty" element={<Cparty />} />
         <Route path="/business" element={<Business />} />
         <Route path="/comsumables" element={<Consumables />} />
-        <Route path="/drags" element={<Drags />} />
+        <Route path="/drags/*" element={<Drags />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/rig" element={<Rig />} />
         <Route path="/services" element={<Services />} />

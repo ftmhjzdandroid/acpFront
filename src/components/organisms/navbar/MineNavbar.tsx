@@ -48,6 +48,7 @@ export default function MineNavbar() {
           renders={() => <Filteritems/>}
           position="bottom"
           keysLabel="label"
+          size="w-80"
           list={[{ id: 1, label: "jjjj" }]}
           children={
             <div className="flex items-center rounded-md border text-neutral-800 p-1">
