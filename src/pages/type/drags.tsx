@@ -5,8 +5,8 @@ import { Items } from '../../components/organisms/folder-layout/items'
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 
 import { useCustomNav } from '../../hook/useNavigate'
-import { AddFolder } from './dragsadd/AddFolder';
-import { AddType } from './dragsadd/AddType';
+import { AddFolder } from './components/AddFolder';
+import { AddType } from './components/AddType';
 import { useState } from 'react';
 import { Modalitems } from './components/Modalitems';
 import { Modaltypeitems } from './components/Modaltypeitems';
@@ -31,7 +31,7 @@ export default function Drags() {
           list={[{ id: 1, label: "jjjj" }]} 
           size='w-40'
           children={
-            <div className="flex items-center rounded-md border text-neutral-800 p-1 bg-[#F9C310]">
+            <div className="flex items-center rounded-md border text-neutral-800 p-1 bg-[#F9C310] cursor-pointer">
                <Add size="26" className="text-neutral-800" />
             </div>
           }

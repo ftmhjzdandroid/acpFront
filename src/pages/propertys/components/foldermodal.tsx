@@ -4,13 +4,12 @@ import { Button } from "../../../components/molecules";
 import { useFormik } from "formik";
 import { noteYup } from "../../../hook/Useyuo";
 import { useState } from "react";
+type Prrops ={
+  onclos :()=>void
+}
 
-type Prop = {
-  close : () => void;
-};
-
-export const Modalitems = (props : Prop) => {
-
+export const Foldermodal = (props:Prrops) => { 
+    
   const [namefild, setNamefild] = useState<string>("");
   const [symbolfild, setSymbolfild] = useState<string>("");
   const [description, setDescription] = useState<string>("");
@@ -28,13 +27,13 @@ export const Modalitems = (props : Prop) => {
   });
 
   return (
-    <div className="w-80">
+    <div className="w-[550px]">
       <div className="flex items-center text-[#3949AB]">
         <Add />
         <Typography type="p">ثبت پوشه جدید</Typography>
       </div>
-      <form action="" onSubmit={formik.handleSubmit}>
-      <div className="flex justify-between gap-5">
+      <form onSubmit={formik.handleSubmit}>
+        <div className="flex justify-between gap-5">
           <div className="flex flex-col my-5 w-1/2">
           <div className="flex my-2 ">
               <Typography type="p" className="pt-3 text-neutral-500">
@@ -89,21 +88,25 @@ export const Modalitems = (props : Prop) => {
           </Typography>
           <Input placeholder="توضیحات" onChangeText={(e)=>setDescription(e)}/>
         </div>
-      <div className="flex justify-between w-3/4 my-5 ">
-        <Typography type="p" className="pt-3 text-neutral-500">
-          شاخه انتخاب شده
-        </Typography>
 
-        <Typography type="p" className="pt-3 text-neutral-500">
-          شاخه اصلی
-        </Typography>
-      </div>
-      <div className="flex  w-full">
-        <Button className="w-1/2">ثبت</Button>
-        <Button variant="outline" className="w-1/2" onClick={props.close}>
-          انصراف
-        </Button>
-      </div>
+        <div className="flex justify-between w-3/4 my-5 ">
+          <Typography type="p" className="pt-3 text-neutral-500">
+            شاخه انتخاب شده
+          </Typography>
+
+          <Typography type="p" className="pt-3 text-neutral-500">
+            شاخه اصلی
+          </Typography>
+        </div>
+
+        <div className="flex  w-full">
+          <Button className="w-1/2" type="submit">
+            ثبت
+          </Button>
+          <Button variant="outline" className="w-1/2" onClick={props.onclos}>
+            انصراف
+          </Button>
+        </div>
       </form>
     </div>
   );

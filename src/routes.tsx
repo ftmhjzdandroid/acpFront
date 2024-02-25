@@ -9,6 +9,7 @@ import { ServicesRoutes } from "./pages/services/services-routes";
 import { Medisineroutes } from "./pages/medisine/Medisine-routes";
 import Agreedtraiff from "./pages/agreedtraiff";
 import Price from "./pages/Price";
+import { Property } from "./pages/propertys";
 
 export const MainRoutes = () => {
   return (
@@ -25,6 +26,7 @@ export const MainRoutes = () => {
         <Route path="/packing/*" element={<Packing />} />
         <Route path="/medisine/*" element={<Medisineroutes />} />
         <Route path="/price/*" element={<Price />} />
+        <Route path="/feature/*" element={<Property />} />
       </Routes>
       <Outlet />
     </>
